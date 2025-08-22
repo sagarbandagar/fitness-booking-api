@@ -1,0 +1,124 @@
+{
+  "info": {
+    "name": "Fitness Studio Booking API",
+    "_postman_id": "fitness-api-12345",
+    "description": "Postman collection for Fitness Studio Booking API with all endpoints and query parameters",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Classes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/classes?timezone=Asia/Kolkata",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["classes"],
+          "query": [
+            {
+              "key": "timezone",
+              "value": "Asia/Kolkata"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Book a Class",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"class_id\": 1,\n  \"client_name\": \"John Doe\",\n  \"client_email\": \"user@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/book",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["book"]
+        }
+      }
+    },
+    {
+      "name": "Get Bookings (All or by Email)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/bookings?email=user@example.com",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["bookings"],
+          "query": [
+            {
+              "key": "email",
+              "value": "user@example.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete a Booking",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"client_name\": \"John Doe\",\n  \"client_email\": \"user@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/bookings/delete",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["bookings", "delete"]
+        }
+      }
+    },
+    {
+      "name": "Get All Bookings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/bookings/all",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["bookings", "all"]
+        }
+      }
+    },
+    {
+      "name": "Delete All Bookings",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/bookings/all/delete",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["bookings", "all", "delete"]
+        }
+      }
+    }
+  ]
+}
