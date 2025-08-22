@@ -17,7 +17,7 @@
 
 ### 1. Clone repo and create virtual environment
 ```bash
-git clone https://github.com/your-username/fitness-booking-api.git
+git clone https://github.com/sagarbandagar/fitness-booking-api.git
 cd fitness-booking-api
 python3 -m venv venv
 source venv/bin/activate   # Mac/Linux
@@ -50,3 +50,4 @@ curl -X GET "http://127.0.0.1:8000/bookings/all" -H "accept: application/json"
 
 # 6. Delete all bookings + reset slots
 curl -X DELETE "http://127.0.0.1:8000/bookings/all/delete" -H "accept: application/json"
+
